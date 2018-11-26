@@ -18,8 +18,8 @@ TIPO_TIEMPO = (
 )
 
 TIPO_MOVIMIENTO =(
-    (SUMA,"Ingrerso")
-    (RESTA,"Egreso")
+    (SUMA,"Suma")
+    (RESTA,"Resta")
 )
 
 TIPO_DIA_SEMANA =(
