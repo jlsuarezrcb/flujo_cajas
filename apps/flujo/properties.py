@@ -12,22 +12,22 @@ SABADO="SABADO"
 DOMINGO="DOMINGO"
 
 TIPO_TIEMPO = (
-    (HORA,"Hora")
-    (DIA,"Dia")
+    (HORA,"Hora"),
+    (DIA,"Dia"),
     (MES,"Mes")
 )
 
 TIPO_MOVIMIENTO =(
-    (SUMA,"Suma")
+    (SUMA,"Suma"),
     (RESTA,"Resta")
 )
 
 TIPO_DIA_SEMANA =(
-    (LUNES,"Lunes")
-    (MARTES,"Martes")
-    (MIERCOLES,"Miercoles")
-    (JUEVES,"Jueves")
-    (VIERNES,"Viernes")
-    (SABADO,"Sabado")
+    (LUNES,"Lunes"),
+    (MARTES,"Martes"),
+    (MIERCOLES,"Miercoles"),
+    (JUEVES,"Jueves"),
+    (VIERNES,"Viernes"),
+    (SABADO,"Sabado"),
     (DOMINGO,"Domingo")
 )
