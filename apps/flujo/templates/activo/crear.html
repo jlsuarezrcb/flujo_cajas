@@ -1,0 +1,31 @@
+{% extends 'base/base.html' %}
+
+{% block title%} LOGIN {%endblock%}
+
+{% block container%}
+<form method="post" enctype="multipart/form-data">
+    {%csrf_token%}
+    <div class="form-group">
+        <label for="">Moneda</label>
+        {{form.moneda}}
+    </div>
+    <div class="form-group">
+        <label for="">Nombre</label>
+        {{form.nombre_activo}}
+    </div>
+    <div class="form-group">
+        <label for="">Valor</label>
+        {{form.valor_activo}}
+    </div>
+
+    <div class="form-group">
+        <label for="">Tiempo</label>
+        {{form.tiempo}}
+    </div>
+    <div class="form-group">
+        <label for="">Valor Tiempo</label>
+        {{form.valor_tiempo}}
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{%endblock%}
