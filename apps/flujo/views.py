@@ -14,7 +14,7 @@ class Home(generic.TemplateView):
 
 class ActivoView(generic.ListView):
     template_name = 'activo/activolistar.html'
-    context_object_name = "activo"
+    context_object_name = "activos"
     model = models.Activo
     paginate_by = 10
 
