@@ -4,6 +4,12 @@
 
 {% block container%}
 
+{% for message in messages %}
+    {% if message.tags %}
+            <div role="alert" class="alert alert-{{ message.tags }}"> {{ message }}</div>
+    {% endif %}
+{% endfor %}
+
 <table class="table table-striped">
     <thead>
     <tr>

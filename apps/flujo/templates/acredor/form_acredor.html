@@ -3,6 +3,13 @@
 {% block title%} ACREDOR {%endblock%}
 
 {% block container%}
+
+{% for message in messages %}
+    {% if message.tags %}
+            <div role="alert" class="alert alert-{{ message.tags }}"> {{ message }}</div>
+    {% endif %}
+{% endfor %}
+
 <form method="post" enctype="multipart/form-data">
     {%csrf_token%}
     <div class="form-group">

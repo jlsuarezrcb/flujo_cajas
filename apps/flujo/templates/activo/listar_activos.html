@@ -1,31 +1,83 @@
 {% extends 'base/base.html' %}
 
-{% block title%} LOGIN {%endblock%}
+{% block title%} ACTIVO LISTAR {%endblock%}
 
 {% block container%}
-<form method="post" enctype="multipart/form-data">
-    {%csrf_token%}
-    <div class="form-group">
-        <label for="">Moneda</label>
-        {{form.moneda}}
-    </div>
-    <div class="form-group">
-        <label for="">Nombre</label>
-        {{form.nombre_activo}}
-    </div>
-    <div class="form-group">
-        <label for="">Valor</label>
-        {{form.valor_activo}}
-    </div>
 
-    <div class="form-group">
-        <label for="">Tiempo</label>
-        {{form.tiempo}}
-    </div>
-    <div class="form-group">
-        <label for="">Valor Tiempo</label>
-        {{form.valor_tiempo}}
-    </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+{% for message in messages %}
+    {% if message.tags %}
+            <div role="alert" class="alert alert-{{ message.tags }}"> {{ message }}</div>
+    {% endif %}
+{% endfor %}
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Valor del Activo</th>
+        <th scope="col">Moneda</th>
+        <th scope="col">Tiempo</th>
+        <th scope="col">Valor de Tiempo</th>
+        <th scope="col">Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for obj in activos %}
+    <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{obj.nombre_activo}}</td>
+        <td>{{obj.valor_activo}}</td>
+        <td>{{obj.moneda}}</td>
+        <td>{{obj.tiempo}}</td>
+        <td>{{obj.valor_tiempo}}</td>
+        <td>
+            <a href="{% url 'view_activo_update' obj.id%}" class="btn btn-outline-primary">Editar</a>
+            <a href="" class="btn btn-outline-danger">Eliminar</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<div class="">
+     <ul class="pagination pagination-sm">
+        {% if page_obj.has_previous %}
+          <li class="paginate_button page-item previous" id="datatable1_previous">
+              <a href="?page={{ page_obj.previous_page_number }}" aria-controls="datatable1" data-dt-idx="0" tabindex="0" class="page-link">
+                  <<
+              </a>
+          </li>
+        {% else %}
+          <li class="paginate_button page-item previous disabled">
+              <a href="#" aria-controls="datatable1" data-dt-idx="0" tabindex="0" class="page-link">
+                 <<
+              </a>
+          </li>
+        {% endif %}
+          {% for i in paginator.page_range %}
+            {% if page_obj.number == i %}
+              <li class="paginate_button page-item active">
+                  <a href="?page={{ i }}" aria-controls="datatable1" data-dt-idx="1" tabindex="0" class="page-link">{{ i }}</a>
+              </li>
+            {% else %}
+                <li class="paginate_button page-item "><a href="?page={{ i }}" class="page-link">{{ i }}</a></li>
+            {% endif %}
+          {% endfor %}
+          {% if page_obj.has_next %}
+          <li class="paginate_button page-item next" id="datatable1_next">
+              <a href="?page={{ page_obj.next_page_number }}" aria-controls="datatable1" data-dt-idx="7" tabindex="0" class="page-link">
+                  >>
+              </a>
+          </li>
+           {% else %}
+              <li class="paginate_button page-item next disabled">
+                  <a href="#" aria-controls="datatable1" data-dt-idx="7" tabindex="0" class="page-link">
+                  >>
+              </a>
+              </li>
+           {% endif %}
+      </ul>
+</div>
+
 {%endblock%}

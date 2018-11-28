@@ -8,6 +8,7 @@ urlpatterns = [
     path('activo/listar', views.ActivoView.as_view(), name='view_activo_listar'),
     path('activo/editar/<int:pk>/', views.ActivoUpdateView.as_view(), name='view_activo_update'),
     path('activo/crear', views.ActivoCreate.as_view(), name='view_activo_crear'),
+    path('activo/eliminar/<int:pk>/', views.ActivoDelete.as_view(), name='view_activo_eliminar'),
     # acredor
     path('acredor/listar', views.AcredorView.as_view(), name='view_acredor_listar'),
     path('acredor/editar/<int:pk>/', views.AcredorUpdateView.as_view(), name='view_acredor_update'),
