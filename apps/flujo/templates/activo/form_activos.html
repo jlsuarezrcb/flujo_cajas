@@ -1,6 +1,6 @@
 {% extends 'base/base.html' %}
 
-{% block title%} ACREDOR LISTAR {%endblock%}
+{% block title%} ACTIVO LISTAR {%endblock%}
 
 {% block container%}
 
@@ -9,18 +9,24 @@
     <tr>
         <th scope="col">#</th>
         <th scope="col">Nombre</th>
-        <th scope="col">Cedula</th>
+        <th scope="col">Valor del Activo</th>
+        <th scope="col">Moneda</th>
+        <th scope="col">Tiempo</th>
+        <th scope="col">Valor de Tiempo</th>
         <th scope="col">Acciones</th>
     </tr>
     </thead>
     <tbody>
-    {% for obj in acredores %}
+    {% for obj in activos %}
     <tr>
         <th scope="row">{{forloop.counter}}</th>
-        <td>{{obj.nombre}}</td>
-        <td>{{obj.cedula}}</td>
+        <td>{{obj.nombre_activo}}</td>
+        <td>{{obj.valor_activo}}</td>
+        <td>{{obj.moneda}}</td>
+        <td>{{obj.tiempo}}</td>
+        <td>{{obj.valor_tiempo}}</td>
         <td>
-            <a href="{% url 'view_acredor_update' obj.id%}" class="btn btn-outline-primary">Editar</a>
+            <a href="{% url 'view_activo_update' obj.id%}" class="btn btn-outline-primary">Editar</a>
             <a href="" class="btn btn-outline-danger">Eliminar</a>
         </td>
     </tr>

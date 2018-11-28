@@ -13,14 +13,14 @@ class Home(generic.TemplateView):
 
 
 class ActivoView(generic.ListView):
-    template_name = 'activo/activolistar.html'
+    template_name = 'activo/form_activos.html'
     context_object_name = "activos"
     model = models.Activo
     paginate_by = 10
 
 
 class ActivoCreate(generic.CreateView):
-    template_name = 'activo/crear.html'
+    template_name = 'activo/listar_activos.html'
     form_class = forms.FrmActivo
     models = models.Activo
 
@@ -36,7 +36,7 @@ class ActivoCreate(generic.CreateView):
 
 
 class ActivoUpdateView(generic.UpdateView):
-    template_name = 'activo/crear.html'
+    template_name = 'activo/listar_activos.html'
     form_class = forms.FrmActivo
     model = models.Activo
 
