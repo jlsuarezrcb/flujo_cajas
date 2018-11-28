@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+
+{% block title%} ACREDOR LISTAR {%endblock%}
+
+{% block container%}
+
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Cedula</th>
+        <th scope="col">Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for obj in acredores %}
+    <tr>
+        <th scope="row">{{forloop.counter}}</th>
+        <td>{{obj.nombre}}</td>
+        <td>{{obj.cedula}}</td>
+        <td>
+            <a href="{% url 'view_acredor_update' obj.id%}" class="btn btn-outline-primary">Editar</a>
+            <a href="" class="btn btn-outline-danger">Eliminar</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{%endblock%}

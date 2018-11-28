@@ -13,17 +13,22 @@
         <th scope="col">Moneda</th>
         <th scope="col">Tiempo</th>
         <th scope="col">Valor de Tiempo</th>
+        <th scope="col">Acciones</th>
     </tr>
     </thead>
     <tbody>
     {% for obj in activos %}
     <tr>
-        <th scope="row">1</th>
+        <th scope="row">{{forloop.counter}}</th>
         <td>{{obj.nombre_activo}}</td>
         <td>{{obj.valor_activo}}</td>
         <td>{{obj.moneda}}</td>
         <td>{{obj.tiempo}}</td>
         <td>{{obj.valor_tiempo}}</td>
+        <td>
+            <a href="{% url 'view_activo_update' obj.id%}" class="btn btn-outline-primary">Editar</a>
+            <a href="" class="btn btn-outline-danger">Eliminar</a>
+        </td>
     </tr>
     {% endfor %}
     </tbody>
