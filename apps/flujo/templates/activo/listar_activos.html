@@ -33,7 +33,7 @@
         <td>{{obj.valor_tiempo}}</td>
         <td>
             <a href="{% url 'view_activo_update' obj.id%}" class="btn btn-outline-primary">Editar</a>
-            <a href="" class="btn btn-outline-danger">Eliminar</a>
+            <a href="{% url 'view_activo_eliminar' obj.id%}" class="btn btn-outline-danger">Eliminar</a>
         </td>
     </tr>
     {% endfor %}

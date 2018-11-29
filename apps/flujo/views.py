@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 # Create your views here.
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 from django.views import generic
 
 from apps.flujo import models
@@ -55,11 +55,9 @@ class ActivoUpdateView(generic.UpdateView):
 
 
 class ActivoDelete(generic.DeleteView):
-    template_name = "activo/listar_activos.html"
+    template_name = 'activo/delete_activo.html'
     model = models.Activo
-
-    def get_success_url(self):
-        return reverse('view_activo_listar')
+    success_url = reverse_lazy('view_activo_listar')
 
 
 class AcredorView(generic.ListView):
