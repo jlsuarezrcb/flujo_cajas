@@ -1,0 +1,10 @@
+{% extends 'base/base.html' %}
+
+{% block container %}
+<form method="post">
+    {% csrf_token %}
+    <p>Esta seguro que desea eliminar: "{{ object }}"?</p>
+    <button type="submit" class="btn btn-danger">ELiminar</button>
+    <a href="{% url 'view_obligaciones_listar'%}" class="btn btn-light">Cancelar</a>
+</form>
+{%endblock%}

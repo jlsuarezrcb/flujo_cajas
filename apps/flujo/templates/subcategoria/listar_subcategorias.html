@@ -1,8 +1,6 @@
-{% extends 'base/base.html' %}
+{% extends 'base/base.html'%}
 
-{% block title%} ACREDOR LISTAR {%endblock%}
-
-{% block container%}
+{% block container %}
 
 {% for message in messages %}
     {% if message.tags %}
@@ -11,27 +9,27 @@
 {% endfor %}
 
 <table class="table table-striped">
-    <thead>
+  <thead>
     <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre</th>
-        <th scope="col">Cedula</th>
-        <th scope="col">Acciones</th>
+      <th scope="col">#</th>
+      <th scope="col">Categoria</th>
+      <th scope="col">Nombre</th>
     </tr>
-    </thead>
-    <tbody>
-    {% for obj in acredores %}
+  </thead>
+  <tbody>
+    {% for obj in categorias %}
     <tr>
-        <th scope="row">{{forloop.counter}}</th>
-        <td>{{obj.nombre}}</td>
-        <td>{{obj.cedula}}</td>
-        <td>
-            <a href="{% url 'view_acredor_update' obj.id%}" class="btn btn-outline-primary">Editar</a>
-            <a href="{% url 'view_acredor_eliminar' obj.id%}" class="btn btn-outline-danger">Eliminar</a>
-        </td>
+      <th scope="row">{{ forloop.counter }}</th>
+      <td>{{obj.categoria}}</td>
+      <td>{{obj.nombre}}</td>
+      <td>
+
+        <a href="{% url 'view_subcategoria_update' obj.id %}" type="button" class="btn btn-outline-primary">Editar</a>
+        <a href="{% url 'view_subcategoria_eliminar' obj.id %}" type="button" class="btn btn-outline-danger">Eliminar</a>
+      </td>
     </tr>
-    {% endfor %}
-    </tbody>
+  {% endfor %}
+  </tbody>
 </table>
 
 <div class="">
@@ -74,4 +72,4 @@
       </ul>
 </div>
 
-{%endblock%}
+{% endblock%}

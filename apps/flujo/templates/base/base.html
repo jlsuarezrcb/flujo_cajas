@@ -48,6 +48,36 @@
                     <a class="dropdown-item" href="{% url 'view_acredor_crear'%}">Crear</a>
                 </div>
             </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Categoria
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'view_categoria_listar'%}">Listar</a>
+                    <a class="dropdown-item" href="{% url 'view_categoria_crear'%}">Crear</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Subcategoria
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'view_subcategoria_listar'%}">Listar</a>
+                    <a class="dropdown-item" href="{% url 'view_subcategoria_crear'%}">Crear</a>
+                </div>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                   aria-haspopup="true" aria-expanded="false">
+                    Obligaciones
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'view_obligaciones_listar'%}">Listar</a>
+                    <a class="dropdown-item" href="{% url 'view_obligacion_crear'%}">Crear</a>
+                </div>
+            </li>
         </ul>
 
     </div>
