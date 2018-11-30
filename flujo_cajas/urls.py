@@ -22,6 +22,7 @@ from django.contrib import admin
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('flujo/', include('apps.flujo.urls')),
+    path('accounts/',include('registration.backends.default.urls')),
 ]+static(STATIC_URL,document_root=STATIC_ROOT)
 
 urlpatterns+=static(MEDIA_URL,document_root=MEDIA_ROOT)
