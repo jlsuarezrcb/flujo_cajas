@@ -7,3 +7,4 @@ django-model-utils==3.1.2
 django-redis==4.9.0
 django-filter==2.0.0
 django-registration-redux==2.4
+django-mail-templated==2.6.5

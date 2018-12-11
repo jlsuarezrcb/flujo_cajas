@@ -2,6 +2,8 @@
 from django.db import models
 from apps.flujo import properties
 
+
+
 # Create your models here.
 class Moneda(models.Model):
     pais = models.CharField(max_length=200)
@@ -28,7 +30,7 @@ class Acredor(models.Model):
 
     def __str__(self):
         return self.nombre + " cedula:"+ self.cedula
-
+    
 
 class Obligaciones(models.Model):
     acredor_obligacion = models.ForeignKey(Acredor, on_delete=models.CASCADE)

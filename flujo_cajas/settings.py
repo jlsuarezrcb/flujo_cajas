@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'apps.flujo',
-    'widget_tweaks'
+    'widget_tweaks',
+    'mail_templated',
 ]
 
 MIDDLEWARE = [
